@@ -166,7 +166,7 @@ function draw(){
 
 function mousePressed(){
 	//console.log(rhythm5);
-	var diams = [600, 460, 374, 240, 154];
+
 	for(var j = 0; j < 5; j++){
 		for(var i = 0; i < slices; i++){
 			var d = dist(mouseX, mouseY, canvasWidth/2 + (diams[j]/2) * cos((-PI/2)+i*(PI/(slices/2))), canvasHeight/2 + (diams[j]/2) * sin((-PI/2)+i*(PI/(slices/2))));
