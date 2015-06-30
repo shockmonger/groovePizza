@@ -37,85 +37,41 @@ function drawPizza(){
 }
 
 function updatePepperonis(beat){
+	var pepperoni = color(255,50,30);
+	var pepper = color(0,102,0);
+	var olive = color(10);
+	var mushroom = color(214,184,153);
+	var sausage = color(100,60,0);
+
+	var colors = [sausage,pepperoni,pepper,mushroom,olive];
+
+	for(var j = 0; j < 5; j++){
 	//console.log("made it");
 	for(var i = 0; i < slices; i ++){
 	//console.log("made it2");
 		if (i == beat){
 			var rad = 45;
 		}
-		else var rad = 30;
+		else var rad = 20;
 		var theta = (-PI/2)+i*PI/(slices/2);		
-		if(rhythm1[i] == 0){
-			fill(255,225,0);
-			noStroke();
-		}
-		else{
-			
-			fill(100,60,0);
-			noStroke();
-		}
-		//if(i%2 == 0){		
-		//	ellipse(canvasWidth/2 + (dia1/2) * cos(theta), canvasHeight/2 + (dia1/2) * sin((theta) ) ,rad , rad);
-		//}
-		//else{ 
-			ellipse(canvasWidth/2 + (dia1/2) * cos(theta), canvasHeight/2 + (dia1/2) * sin(theta) ,rad + 30, rad + 30);			
-	//	}
 		
-		if(rhythm2[i] == 0){
-			fill(255,225,0);
-			noStroke()
-		}
-		else{
-			fill(255,50,30);			
-			noStroke();
-		}
-		
-		ellipse(canvasWidth/2 + (dia2/2) * cos((-PI/2)+i*PI/(slices/2)), canvasHeight/2 + (dia2/2) * sin((-PI/2)+i*PI/(slices/2)),rad + 20, rad + 20);
-		
-		if(rhythm3[i] == 0){
-			fill(255,225,0);
-			noStroke();
-		}
-		else{
-			
-			fill(100,60,0);
-			fill(0,102,0);
 
-			noStroke();
-		}
-	
-		ellipse(canvasWidth/2 + (dia3/2) * cos((-PI/2)+i*PI/(slices/2)), canvasHeight/2 + (dia3/2) * sin((-PI/2)+i*PI/(slices/2)),rad + 10, rad + 10);
-		
-		if(rhythm5[i] == 0){
-			fill(255,225,0);
-			noStroke();
-		}
-		else{
-			fill(10);
-			noStroke();
-		}
-		ellipse(canvasWidth/2 + (dia5/2) * cos((-PI/2)+i*PI/(slices/2)), canvasHeight/2 + (dia5/2) * sin((-PI/2)+i*PI/(slices/2)),rad-5, rad -5);
-		fill(255,225,0);
-		ellipse(canvasWidth/2 + (dia5/2) * cos((-PI/2)+i*PI/(slices/2)), canvasHeight/2 + (dia5/2) * sin((-PI/2)+i*PI/(slices/2)),(rad-5)/2 , (rad-5)/2 );
-		
-		
-		if(rhythm4[i] == 0){
+		if(pizza[j][i] == 0){
 			fill(255,225,0);
 			noStroke();
 		}
 		else{
 			
-			 
-			fill(214,184,153);
-
+			fill(colors[j]);
 			noStroke();
 		}
-	
-		ellipse(canvasWidth/2 + (dia4/2) * cos((-PI/2)+i*PI/(slices/2)), canvasHeight/2 + (dia4/2) * sin((-PI/2)+i*PI/(slices/2)),rad , rad );
+		
+			ellipse(canvasWidth/2 + (diams[j]/2) * cos(theta), canvasHeight/2 + (diams[j]/2) * sin(theta) ,rad, rad);			
 
 
 	
 	}
+}
 
 	
 }

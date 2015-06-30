@@ -6,7 +6,7 @@ var dia2 = 460;
 var dia3 = 340;
 var dia4 = 240;
 var dia5 = 154;
-var diams = [600, 460, 374, 240, 154];
+var diams = [600, 500, 394, 290, 204];
 var rhythm1 = [1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0];
 var rhythm2 = [0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0];
 var rhythm3 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -120,7 +120,9 @@ function draw(){
 	}
 	beatMs = 30000/tempo;
 	lastTempo = document.getElementById('tempo').value;
-	
+	pizza = [rhythm1, rhythm2, rhythm3, rhythm4, rhythm5];
+	sounds = [sound1, sound2, sound3, sound4, sound5];
+
 	drawPizza();
 	var swing;
 	//ellipse(canvasWidth/2,canvasWidth/2, dia1, dia1);
@@ -164,85 +166,35 @@ function draw(){
 
 function mousePressed(){
 	//console.log(rhythm5);
-	for(var i = 0; i < slices; i++){
-		var d = dist(mouseX, mouseY, canvasWidth/2 + (dia1/2) * cos((-PI/2)+i*(PI/(slices/2))), canvasHeight/2 + (dia1/2) * sin((-PI/2)+i*(PI/(slices/2))));
-		if (d < 27){
-			if(rhythm1[i] == 0){
-			rhythm1[i] = 1;
-			}
-			else{
-			rhythm1[i] = 0;
-			}
-		} 
-		var d = dist(mouseX, mouseY, canvasWidth/2 + (dia2/2) * cos((-PI/2)+i*(PI/(slices/2))), canvasHeight/2 + (dia2/2) * sin((-PI/2)+i*(PI/(slices/2))));
-		if (d < 20){
-			if(rhythm2[i] == 0){
-			rhythm2[i] = 1;
-			}
-			else{
-			rhythm2[i] = 0;
-			}
-		} 
-		var d = dist(mouseX, mouseY, canvasWidth/2 + (dia3/2) * cos((-PI/2)+i*(PI/(slices/2))), canvasHeight/2 + (dia3/2) * sin((-PI/2)+i*(PI/(slices/2))));
-		if (d < 17){
-			if(rhythm3[i] == 0){
-			rhythm3[i] = 1;
-			}
-			else{
-			rhythm3[i] = 0;
-			}
-		} 
-		var d = dist(mouseX, mouseY, canvasWidth/2 + (dia4/2) * cos((-PI/2)+i*(PI/(slices/2))), canvasHeight/2 + (dia4/2) * sin((-PI/2)+i*(PI/(slices/2))));
-		if (d < 17){
-			if(rhythm4[i] == 0){
-			rhythm4[i] = 1;
-			}
-			else{
-			rhythm4[i] = 0;
-			}
-		} 
-		var d = dist(mouseX, mouseY, canvasWidth/2 + (dia5/2) * cos((-PI/2)+i*(PI/(slices/2))), canvasHeight/2 + (dia5/2) * sin((-PI/2)+i*(PI/(slices/2))));
-		if (d < 17){
-			if(rhythm5[i] == 0){
-			rhythm5[i] = 1;
-			}
-			else{
-			rhythm4[i] = 0;
-			}
-		} 
+	var diams = [600, 460, 374, 240, 154];
+	for(var j = 0; j < 5; j++){
+		for(var i = 0; i < slices; i++){
+			var d = dist(mouseX, mouseY, canvasWidth/2 + (diams[j]/2) * cos((-PI/2)+i*(PI/(slices/2))), canvasHeight/2 + (diams[j]/2) * sin((-PI/2)+i*(PI/(slices/2))));
+			if (d < 20){
+				console.log(pizza[j][i]);
+				if(pizza[j][i] == 0){
+				pizza[j][i] = 1;
+				}
+				else{
+				pizza[j][i] = 0;
+				}
+			} 
+		}
 	}
 }
 
 
 
 function playBeats(beat){
-	if(rhythm1[beat] == 1){
-	playSound(sound1);
-	
-	}
-	if(rhythm2[beat] == 1){
-	playSound(sound2);
-	
-	
 
-	}
-	if(rhythm3[beat] == 1){
-	playSound(sound3);
-	
-	
 
+	for(var j = 0; j < 5; j++){
+		for(var i = 0; i < slices; i++){
+			if(pizza[j][beat] == 1){
+			playSound(sounds[j]);
+			}
+		}
 	}
-	if(rhythm4[beat] == 1){
-	playSound(sound4);
-	
-	}
-	
-	if(rhythm5[beat] == 1){
-	playSound(sound5);
-	
-	
-	}
-
 }
 
 function reset(){
