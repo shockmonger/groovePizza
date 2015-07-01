@@ -16,15 +16,17 @@
 
 <body>
 <div id = 'content'> 
-
-	<div id = "right">
+	<div id = "settings">
+		
 		<div id = "sounds">
 	 
 			
-			<h2> Sounds </h2>
-			<input id = "volume" type = "range" min = 0 max = 100 >VOLUME</input><br>
-		
-			
+			<h2 class = 'setting'> Sounds </h2>
+			<input id = "volume" type = "range" min = 0 max = 100 >volume</input><br>
+			<input id = "reverb" type = "range" min = 0.0 max = 100.0 > reverb</button><br>
+		<div id ='menus1'>
+			<img src = './imgs/toppings.png' height='97'></img>
+			<div id = 'menus'>
 			<select id='sound1' class = 'sounds' onchange = 'soundChange()'>
 			              <option value="acKick1">Acoustic Kick 1</option>
 			              <option value="acKick2">Acoustic Kick 2</option>
@@ -62,15 +64,15 @@
 			             		              
 			              
 			         </select>  <br> 
-
-			<input id = "reverb" type = "range" min = 0.0 max = 100.0 > REVERB</button><br>
-			
+			</div>
+		</div>	
 		
-		</div>
-
+		
+	</div>
+		<div id = 'labels'>
 		<h2 class = 'setting'> Labels </h2>
 		       
-			<select id='label' class = ''  onchange ="labelChange()">
+			<select id='label' class = ''  onchange ="labelChange()"><br>
 			          
 				
 			
@@ -83,17 +85,17 @@
 				<option  value="16ths">16th Notes</option>
 				<br>
 			</select>
+		</div>
 		
 		
-		
-	</div>	
-	<div id = "left">
+
+	
 		<div id = "time">
-			<h2> Time </h2>
+			<h2 class = 'setting'> Time </h2>
 			<button id = "tap" onclick = "tap()">TAP</button><br>
-			<input id = "tempo" type = "range" min = 60 max = 320>TEMPO</input><br>
-			<input id = "slices" type = "range" min = 2 max = 16>SLICES</input><br>
-			<input id = "swing" type = "range" min = 0 max = 50>SWING</input><br>
+			<input id = "tempo" type = "range" min = 60 max = 400>tempo</input><br>
+			<input id = "slices" type = "range" min = 2 max = 16>slices</input><br>
+			<input id = "swing" type = "range" min = 0 max = 50>swing</input><br>
 			
 		
 		</div>
@@ -101,7 +103,7 @@
 	
 		
 		<div id = "sets">
-			<h2> Grooves </h2>
+			<h2 class = setting> Grooves </h2>
 			
 			
 			<select id='grooves' class = ''  onchange ="grooveChange()">
@@ -112,11 +114,8 @@
 				<option  value="plain" >Plain</option>
 				<br>
 				<option  value="uhnTiss">Uhn Tiss</option>
-				
-			
 				<br>
 				<option  value="levee" >Levee</option>
-				
 				<br>
 				<option  value="coldSweat">Cold Sweat</option>
 				<br>
@@ -164,15 +163,14 @@
 				<br>
 			
 				
-			</select>
+			</select><br>
 
 		
-		</div><br>
-		<div id = "random" class = "setting">
-			
-				<button  onclick = "randomSet()">RANDOM</button><br>
+		
+				<button  onclick = "reset()">plain</button><br>
+				<button  onclick = "randomSet()">random</button><br>
 				
-				<input  id = "density" type = "range" min = 5  max = 70 style = "width:115px;">DENSITY</input><br>
+				<input  id = "density" type = "range" min = 5  max = 70 >density</input><br>
 		</div>
 		
 		

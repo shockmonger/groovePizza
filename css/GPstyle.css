@@ -1,26 +1,52 @@
 
 body {
-    background-image: url('../imgs/bricks.jpg');
-	
+   /* background-image: url('../imgs/bricks.jpg');*/
+
+    background-image: url('../imgs/steel.png');
+    background-size: 1900px 1000px;
 
 }
 #content{
-	width:1315px;
-	margin:12px auto 12px auto;
-	margin}
+	width:1230px;
+	margin:auto;
+	}
 
 
-#right{
-		background-color:rgba(255,255,255,0.7);
-		border-width: 1px;
-		border-style: solid;
-		border-color: black;
-		float:right;
-		margin-left: 15px;
+#menus{
+	float: right;
+	margin-right:10px;
+
+
 }
 
-#sounds, #time, #sets, #label{
+#menus1{
+	background-color: rgb(255,255,255);
+	width:180px;
+	margin:10px;
+	padding:10px;
+	border-width: 1px;
+	border-style:solid;
+
+}
+
+
+#settings{
+	float: right;
+	width: 300px;
+	height: 700px;
+	border-width: 1px;
+	border-style:solid;
+	margin: 30px;
+	background-color:rgba(150,150,150,.5);
+}
+
+
+
+#sounds, #time, #sets, #labels{
 	margin: 10px;
+	border-width: 1px;
+	border-style:solid;
+	padding:10px;
 }
 
 .setting{
@@ -28,15 +54,6 @@ body {
 }
 
 
-#left{
-	background-color:rgba(255,255,255,0.7);
-	border-width: 1px;
-	float:left;
-	border-style: solid;
-	border-color: black;
-	margin-right: 15px;
-	
-}
 #reset{
 	float:left;
 }
@@ -45,13 +62,11 @@ body {
 	float:left;
 }
 
-#sets{
-	float:left;
-}
+
 
 #pizza{
-width: auto;
+	width: 860px;
 	height: 100%;
-	display: block;
-	float:none;
+	margin:10;
+	float:left;	
 }
