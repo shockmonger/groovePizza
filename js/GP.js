@@ -1,12 +1,8 @@
 var canvas;
 var canvasWidth; 
 var canvasHeight; 
-var dia1 = 600;
-var dia2 = 460;
-var dia3 = 340;
-var dia4 = 240;
-var dia5 = 154;
-var diams = [600, 500, 394, 290, 204];
+
+var diams = [610, 500, 395, 298, 208];
 var rhythm1 = [1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0];
 var rhythm2 = [0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0];
 var rhythm3 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -17,12 +13,11 @@ var tempo;
 var tempoMs;
 var playing = false;
 var beat;
-//var tempoSlider;
-//var swingSlider;
+
 var volume;
 var img;
 var slices;
-//var slicesSlider;
+
 var running;
 var label;
 var hat1,kick1,snare1,tamb1;
@@ -85,7 +80,7 @@ function setup(){
 	image(img,0,0,canvasWidth, canvasHeight);
 	canvas = createCanvas(canvasWidth, canvasHeight);
 	canvas.style("margin","1px");
-	//canvas.position(250,0);
+	
 	tempo = 90;
 	tempoMs = 30000/tempo;
 	beat = -1;
@@ -97,20 +92,20 @@ function setup(){
 	slices = 8;
 
 	lastTempo = 0;
-	//bootsNcats();
+	
 	billieJean();
 	document.getElementById("reverb").value = 0;	
 	labelMode = 0;
 	soundChange();
+
 }
 
 
 function draw(){
-	image(img,0,0,canvasWidth, canvasHeight);
-//	slices = sliceSlider.value();
+	//image(img,0,0,canvasWidth, canvasHeight);
+
 	slices = document.getElementById("slices").value;	
-	//console.log(beat);
-	//background(70);
+	
 	
 	volume = document.getElementById("volume").value/100 ;
 	masterVolume(volume);
@@ -120,15 +115,16 @@ function draw(){
 	}
 	beatMs = 30000/tempo;
 	lastTempo = document.getElementById('tempo').value;
+
+
+
+
 	pizza = [rhythm1, rhythm2, rhythm3, rhythm4, rhythm5];
 	sounds = [sound1, sound2, sound3, sound4, sound5];
 
 	drawPizza();
 	var swing;
-	//ellipse(canvasWidth/2,canvasWidth/2, dia1, dia1);
-	//ellipse(canvasWidth/2,canvasWidth/2, dia2, dia2);
-	//ellipse(canvasWidth/2,canvasWidth/2, dia3, dia3);
-	//ellipse(canvasWidth/2,canvasWidth/2, dia4, dia4);
+
 	
 	updatePepperonis(beat);
 	
@@ -153,19 +149,11 @@ function draw(){
 	}
 	
 	
-	
-		
-	
-
 }
 
 
-
-
-
-
 function mousePressed(){
-	//console.log(rhythm5);
+
 
 	for(var j = 0; j < 5; j++){
 		for(var i = 0; i < slices; i++){
@@ -181,6 +169,7 @@ function mousePressed(){
 			} 
 		}
 	}
+	
 }
 
 
@@ -189,11 +178,11 @@ function playBeats(beat){
 
 
 	for(var j = 0; j < 5; j++){
-		for(var i = 0; i < slices; i++){
+	
 			if(pizza[j][beat] == 1){
 			playSound(sounds[j]);
 			}
-		}
+		
 	}
 }
 
@@ -251,11 +240,11 @@ function keyPressed() {
 	if (keyCode == 32){
 		if(running == true){
 		running = false;
-		//noLoop();
+
 		}
 		else{
 			running = true
-		//	loop();
+		
 		}
 	} 
 }

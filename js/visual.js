@@ -17,12 +17,7 @@ function drawPizza(){
 		stroke(0);
 		textSize(20);
 		fill(0); 
-		var Xoffset = 0;
-		var Yoffset = 0;
-		if(i>9){
-			Yoffset = 10;
-			Xoffset = 10;
-		}
+		
 	
 		if (labelMode == 0){label = "";}
 		if (labelMode == 2){label = i+1;}	
@@ -50,7 +45,7 @@ function updatePepperonis(beat){
 	for(var i = 0; i < slices; i ++){
 	//console.log("made it2");
 		if (i == beat){
-			var rad = 45;
+			var rad = 35;
 		}
 		else var rad = 20;
 		var theta = (-PI/2)+i*PI/(slices/2);		
@@ -66,8 +61,13 @@ function updatePepperonis(beat){
 			noStroke();
 		}
 		
-			ellipse(canvasWidth/2 + (diams[j]/2) * cos(theta), canvasHeight/2 + (diams[j]/2) * sin(theta) ,rad, rad);			
+			ellipse(canvasWidth/2 + (diams[j]/2) * cos(theta), canvasHeight/2 + (diams[j]/2) * sin(theta) ,rad + ((5-j)*4), rad + ((5-j)*4));			
 
+			if(j == 4){
+				fill(255,225,0);
+				ellipse(canvasWidth/2 + (diams[j]/2) * cos(theta), canvasHeight/2 + (diams[j]/2) * sin(theta) ,rad -9, rad - 9);			
+
+			}
 
 	
 	}
