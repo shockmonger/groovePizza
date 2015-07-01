@@ -14,11 +14,20 @@ body {
 
 #menus{
 	float: right;
-	margin-right:100px;
-	margin-top:1px;
+	margin-right:10px;
+
 
 }
 
+#menus1{
+	background-color: rgb(255,255,255);
+	width:180px;
+	margin:10px;
+	padding:10px;
+	border-width: 1px;
+	border-style:solid;
+
+}
 
 
 #settings{

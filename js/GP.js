@@ -159,7 +159,7 @@ function mousePressed(){
 		for(var i = 0; i < slices; i++){
 			var d = dist(mouseX, mouseY, canvasWidth/2 + (diams[j]/2) * cos((-PI/2)+i*(PI/(slices/2))), canvasHeight/2 + (diams[j]/2) * sin((-PI/2)+i*(PI/(slices/2))));
 			if (d < 20){
-				console.log(pizza[j][i]);
+				
 				if(pizza[j][i] == 0){
 				pizza[j][i] = 1;
 				}
@@ -211,10 +211,11 @@ function tap(){
 	else{
 	var diff = millis() - current;
 	newTempo = (30000.0/diff)*2;
+	document.getElementById('tempo').value = newTempo;
+	
 	tapOn = false;
 	}
 	tempo = newTempo;
-	
 	
 }
 	
